@@ -5,6 +5,21 @@
 #else
 #include <GL/glut.h>
 #endif
+#ifdef _WIN32
+    #include <windows.h>
+
+    void sleep(unsigned milliseconds)
+    {
+        Sleep(milliseconds);
+    }
+#else
+    #include <unistd.h>
+
+    void sleep(unsigned milliseconds)
+    {
+        usleep(milliseconds * 1000); // takes microseconds
+    }
+#endif
 using namespace std;
 
 	GLfloat vertices[] = {-1.0,-1.0,-1.0,1.0,-1.0,-1.0,
@@ -46,7 +61,7 @@ void display(void)
 }
 
 void spinCube()
-{
+{	sleep(1000);
 	theta[axis] += angle_beta;
 	if( theta[axis] > 360.0 ) theta[axis] -= 360.0;
 	glutPostRedisplay();
