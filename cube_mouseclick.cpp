@@ -1,3 +1,8 @@
+/* Rotating cube with color interpolation */
+/* Demonstration of use of coordinate 
+transformations and simple data structure for representing
+cube */
+/*Both normals and colors are assigned to the vertices */
 #include <stdlib.h>
 
 #ifdef __APPLE__
