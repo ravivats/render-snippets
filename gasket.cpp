@@ -5,7 +5,7 @@
 
 int width = 500, height = 500;
 GLdouble point_p = 0.001;
-GLdouble triangle_t[3][2] = {{-0.5, 0}, {0.5, 0}, {0, 0.866}};
+GLdouble triangle_t1[3][2] = {{-0.5, 0}, {0.5, 0}, {0, 0.866}};
 
 void init() {
     glClearColor(0, 0, 0, 1.0);
@@ -39,8 +39,8 @@ void display_func() {
     for (int i = -1; ++i < 10000;) {
         draw_quadilateral(p);
         v = rand() % 3;
-        p[0] = (p[0] + triangle_t[v][0] * width / 200.0) / 2;
-        p[1] = (p[1] + triangle_t[v][1] * height / 200.0) / 2;
+        p[0] = (p[0] + triangle_t1[v][0] * width / 200.0) / 2;
+        p[1] = (p[1] + triangle_t1[v][1] * height / 200.0) / 2;
     }
     glFlush();
 }
