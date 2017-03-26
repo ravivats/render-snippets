@@ -32,8 +32,8 @@ void init() {
 			z += x;
 		}
 		z -= x;
-		x *= 0.75;
-		y *= 0.75;
+		x *= 0.50;
+		y *= 0.25;
 	}
 	for (int i = -1; ++i < 2;) {
 		glLightfv(GL_LIGHT0 | i, GL_POSITION, light_pos[i]);
